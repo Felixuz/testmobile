@@ -22,7 +22,7 @@ class AdsSeeder extends Seeder
     public function createTrans($name)
     {
         $ads = Ads::create([
-            'created_by' => 1
+            'lot'
         ]);
         AdsTranslation::create([
             'object_id' => $ads->id,
