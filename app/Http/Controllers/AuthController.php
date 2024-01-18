@@ -37,6 +37,11 @@ class AuthController extends Controller
         }   
     }
 
+    /**
+     * @param Request $request
+     * @response array{"firstname":"","password":""}
+     */
+
     public function login(Request $request)
     {
         $data = $request->validate([
