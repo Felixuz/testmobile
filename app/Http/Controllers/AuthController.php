@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    /**
+     * @param Request $request
+     * @response array{"firstname":"","lastname":"","phone":"","password":""}
+     */
     public function register(Request $request)
     {
         

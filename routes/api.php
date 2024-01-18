@@ -26,3 +26,4 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::post('ads',[AdsController::class,'save']);
+
