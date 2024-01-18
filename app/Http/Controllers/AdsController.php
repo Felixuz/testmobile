@@ -19,7 +19,7 @@ class AdsController extends Controller
 
     /**
      * @param Request $request
-     * @response array{"title":"fitnes","description":"fitnes","location":"New York City,Street Orlando"}
+     * @response array{"title":"","description":"","lot":float,"lat":float}
      */
 
     public function save(Request $request)
