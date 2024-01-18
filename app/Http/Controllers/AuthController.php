@@ -36,4 +36,31 @@ class AuthController extends Controller
             return response()->json(['error'=>'Provide proper details']);
         }   
     }
+
+    public function login(Request $request)
+    {
+        $data = $request->validate([
+            'firstname' => 'required|string',
+            'password' => 'required|string'
+        ]);
+
+        $user = User::where('firstname', $data['firstname'])->first();
+
+         if (!$user || !Hash::check($data['password'], $user->password)) {
+            return response([
+                'msg' => 'incorrect username or password'
+            ], 401);
+        }
+
+        $token = $user->createToken('apiToken')->plainTextToken;
+
+        $res = [
+            'user' => $user,
+            'token' => $token
+        ];
+
+        return response($res, 201);
+    }
+
+     
 }
